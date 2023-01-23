@@ -15,3 +15,18 @@ var timeblocks = $('.timeblock');
 
 var thisHour = moment().format('H');
 //console.log(thisHour)
+
+timeblocks.each(function() {
+    var hour = $(this).attr('data-hour');
+    //Note the 'hour'and 'thisHour' should be an integer, to make sure it, is
+    //you can do something like
+    hour = parseInt(hour, 10)
+    thisHour = parseInt(thisHour, 10)
+    if (hour < thisHour) {
+        $(this).addClass("past")
+    } else if (hour == thisHour) {
+        $(this).addClass("present")
+    } else {
+        $(this).addClass("future")
+    }
+ })
