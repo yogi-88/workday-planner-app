@@ -30,3 +30,7 @@ timeblocks.each(function() {
         $(this).addClass("future")
     }
  })
+
+ //Save input to local storage
+ //Create variable(an array) called inputs that will store all of the input data
+ 
