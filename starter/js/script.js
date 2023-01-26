@@ -42,10 +42,17 @@ timeblocks.each(function() {
     localStorage.setItem(time, plan)
 
  })
+//On refresh the saved events still show on planner
+function dayPlanner() {
+    $(".hour").each(function() {
+        var currentHr = $(this).text();
+        var currentPlan = localStorage.getItem(currentHr);
 
- 
- //Create variable(an array) called inputs that will store all of the input data
-//  let key = prompt("Enter key you want tos et")
-//  let value = prompt("enter value you want set")
-//  localStorage.setItem(key, value)
-//  console.log(`The value at ${key} is  ${localStorage.getItem(value)}`)
+        if(currentPlan !== null) {
+            $(this).siblings(".day-planner").val(currentPlan)
+        }
+
+    })
+}
+dayPlanner();
+
