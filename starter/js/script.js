@@ -31,6 +31,21 @@ timeblocks.each(function() {
     }
  })
 
- //Save input to local storage
- //Create variable(an array) called inputs that will store all of the input data
+ //listen to click event on save button
+ $(".saveBtn").on("click", function(event) {
+    event.preventDefault();
+    var time = $(this).siblings(".hour").text();
+    var plan = $(this).siblings(".day-planner").val();
+    
+
+    //storing text for that event on local storage
+    localStorage.setItem(time, plan)
+
+ })
+
  
+ //Create variable(an array) called inputs that will store all of the input data
+//  let key = prompt("Enter key you want tos et")
+//  let value = prompt("enter value you want set")
+//  localStorage.setItem(key, value)
+//  console.log(`The value at ${key} is  ${localStorage.getItem(value)}`)
